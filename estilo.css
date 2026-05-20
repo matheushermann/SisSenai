@@ -10,4 +10,13 @@ button{background: var(--primary);color:white; border:none; cursor:pointer;font-
 button:houver{opacity:0.9;}
 table{width:100%;border-collapse: collapse; margin-top:1rem;}
 th, td{border-bottom:1px solid #ddd; padding: 10px; text-align:left;}
-  
+
+.banner{
+  background:linear-gradient(rgba(0,85,153,0.8)),rgba(0,85,153,0.8)),url('images\senai.png');
+  background-size:cover;
+  color:white;
+  padding:30px 20px;
+  text-align:center;
+  margin-bottom:10px;
+  ]
+}
