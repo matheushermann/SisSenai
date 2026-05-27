@@ -48,9 +48,9 @@
     fetch('/listar-clientes')
        .then(res => res.json())
        .then(clientes => {
-         const corpoTabela = dcument.getElementByld("lista-clientes")
+         const corpoTabela = document.getElementByld("lista-clientes");
          clientes.forEach(c => {
-           corpoTabela.innerHTML += `
+           corpoTabela.innerHTML +=`
              <tr>
                <td>${c.nome}</td>
                <td>${c.cpf}</td>
