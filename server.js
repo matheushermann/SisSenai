@@ -36,4 +36,12 @@ db.serialize(() => {
       res.json(rows);
     });
   });
-               
+    //Iniciar Servidor
+  const PORT = 3000;
+  app.listen(POER, () => {
+    console.log(`================================================`);
+    console.log(`SISSENAI RODANDO EM: https://localhost:${PORT}`);
+    console.log(`================================================`);
+  });
+    
+    
