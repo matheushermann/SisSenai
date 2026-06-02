@@ -14,10 +14,26 @@ const db = new sqlite3.Database('./sisenai.db');
 //Inicialização das Tabelas(Cria apenas se não existiram)
 db.serialize(() => {
   //Tabela de Clientes
-             db.run('CREATE TABLE IF NOT EXISTS clientes(
+             db.run(`CREATE TABLE IF NOT EXISTS clientes(
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                nome TEXT,
                cpf TEXT,
                telefone TEXT
   )`);
+
+  // ---Rotas de Clientes---
+  app.post('/salvar-cliente',(req, res) => {
+    const { nome, cpf, telefone } = req.body;
+    db.rum(`INSERT INTO clientes(nome, cpf, telefone) VALUES (?,?,?)`, [nome, cpf, telefone], (err) => {
+      if(err) retur res.status(500).send(err.message);
+      res.redirect('/clientes.html');
+    });
+  });
+
+  app.get('/listar-clientes', (req, res) => {
+    db.all("SELECT * FROM clientes", [], (err, rows) => {
+      if(err) return res.status(500).json(err);
+      res.json(rows);
+    });
+  });
                
