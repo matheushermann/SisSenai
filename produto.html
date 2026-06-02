@@ -42,4 +42,17 @@
     </table>
   </div>
 </div>
+
+<script>
+  fetch('/listar-produtos')
+    .then(res => res.json())
+    .then(produtos => {
+      const corpoTabela = document.getElementByld('lista-produtos');
+      produtos.forEach(p => {
+        const corpoTabela =document.getElementByld('lista-clientes')
+        clientes.forEach(c => {
+          corpoTabela.innerHTML +=
+            <tr>
+            <td>${c.nome}</td>
+</script>
 </body>
