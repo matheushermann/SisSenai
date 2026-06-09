@@ -85,7 +85,21 @@ app.get('/listar-produtos', (req, res) => {
 app.put('/alterar-cliente/:id',(req, res) => {
 	const {id} = req.params;+
     const {nome, cpf, telefone} = req.body;
-	const sql =
+	const sql = `UPDATE clientes SET nome = ?, cpf = ?, telefone = ? WHERE id = ?`;
+
+	db.run(sql, [nome, cpf, telefone, id], (err) => {
+	  if(err) return res.status(500).json({error: err.message });
+	  res.json({success:true });
+  });
+});
+//Nova ROTA: Excluir cliente
+app.delete('/excluir-cliente/:id',(req, res) => {
+	const{id} = req.params;
+	db.run(`DELETE FROM clientes WHERE id = id ?`,[id], (err) => {
+		if(err) returm res.status(500).json({error: err.message});
+		res.json({sucess: true });
+	});
+});
 
 // --- ROTAS DE VENDAS ---
 
