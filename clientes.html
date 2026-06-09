@@ -36,6 +36,8 @@
             <th>Nome</th>
             <th>CPF/CNPJ</th>
             <th>Telefone</th>
+            <th>Acões</th><!--Coluna de ação adicionada -->
+          
           </tr>
         </thead>
         <tbody id="lista-clientes">
@@ -45,6 +47,7 @@
   </div>
  
   <script>
+  Function carregarClientes(){
     fetch('/listar-clientes')
        .then(res => res.json())
        .then(clientes => {
@@ -55,6 +58,12 @@
                <td>${c.nome}</td>
                <td>${c.cpf}</td>
                <td>${c.telefone}</td>
+               <td>
+              <button onclick="prepararEdicao(${c.id}, '${c.nome}', '${c.cpf}', '${c.telefone}')"
+                style="witdh:auto;background:orange; padding:5px 10px; margin-right:5px;">✏️</button>
+              <button onclick="excluirCliente(${c.id})"
+                style="witdh:auto;background:red;padding:5px 10px;">🗑️</button>
+                </td>
              </tr>`;
              });
     });
