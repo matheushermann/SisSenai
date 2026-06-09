@@ -81,6 +81,11 @@ app.get('/listar-produtos', (req, res) => {
         res.json(rows);
     });
 });
+//***NOVA ROTA:Alterar cliente existente***
+app.put('/alterar-cliente/:id',(req, res) => {
+	const {id} = req.params;+
+    const {nome, cpf, telefone} = req.body;
+	const sql =
 
 // --- ROTAS DE VENDAS ---
 
