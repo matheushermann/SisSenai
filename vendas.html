@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang= "pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="estilo.css">
+	<title>SisSenai - Lançar Venda</title>
+</head>
+<body>
+	<nav>
+	      <a href="index.html">Home</a>
+	      <a href="clientes.html">Clientes</a>
+	      <a href="produtos.html">Produtos</a>
+	      <a href="vendas.html">Vendas</a>
+		      <a href="consulta vendas.html">Consulta Vendas</a>
+	</nav>
 
+	<header class="banner">
+	    <h1> Controle de Vendas</h1>
+	    <p> Cadastre novas vendas no sistema</p>
+	</header>
+
+  <div class"container">
+    <div style="margin-botton: 20px;">
+      <button onclick="window.location.href='consulta_vendas.hmtl' "style="background: #555; witdh: auto;
+padding: 10px 20px,">
+        🔍Ver Histórico e Detalhes de Vendas
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Npva Venda /Orçamento </h2>
+
+      <label>Cliente:</label>
+      <select id="selProduto">
+        <option value="">Selecione o Produto...</option>
+      </select>
+
+      <label>Quantidade:</label>
+      <input type="number" id="inpQtd" value="1" min="1">
+
+      <button onclick="adicionarItem()">Adicionar Item</button>
+
+      <table id="tabelaItens">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Preço Unit.</th>
+            <th>Subtotal</th>
+        corpoTabela.innerHTML += `
+            <tr>
+              <td>${p.descricao}</td>
+              <td>${p.preco.toFixed(2)}</td>
+              <td>${p.estoque}</td>
+            </tr>
+        });
+      });
+        </script>
+        </body>
+        <footer class="rodape">
+          <div class="container-rodape">
+            <p>&copy; 2026 SisSenai - Sistema de Gestão Educacional</p>
+            <p>Desenvolvimento para fins didáticos - Unidade SENAI Capanema/PR</p>
+          </div>
+        </footer>
+        </html>
+            </tr>
+          </tr>
+        </thead>
